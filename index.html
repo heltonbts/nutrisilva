@@ -4,6 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>João Victor Silva | @nutrisilva</title>
+  <!-- Google Analytics GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GBN3EQLWGN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-GBN3EQLWGN');
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -589,6 +598,20 @@
     </footer>
 
   </div>
+
+  <!-- Rastreio de cliques nos botões -->
+  <script>
+    document.querySelectorAll('.link-card').forEach(function(card) {
+      card.addEventListener('click', function() {
+        var label = card.querySelector('.link-title');
+        if (label) {
+          gtag('event', 'click_link', {
+            link_name: label.innerText.trim()
+          });
+        }
+      });
+    });
+  </script>
 
   <!-- Instagram embed script -->
   <script async src="//www.instagram.com/embed.js"></script>
